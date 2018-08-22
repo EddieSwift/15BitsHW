@@ -14,7 +14,6 @@
     return self.subjectType & type ? @"Yes" : @"No";
 }
 
-
 - (NSString*) description {
     
     

@@ -51,19 +51,24 @@
                         break;
                 }
         }
+
         
         [allStudents addObject:student];
         
-        //NSLog(@"Student #%d", i+1);
-        //NSLog(@"%@", student);
-        //NSLog(@" ");
-        
+        /*
+        NSLog(@"Student #%d", i+1);
+        NSLog(@"%@", student);
+        NSLog(@" ");
+        */
     }
+  
+
     
-    //NSLog(@"%@", allStudents);
+
         
 #pragma mark - Level "Student"
-        
+ 
+  /*
         NSMutableArray *technicalStudents = [NSMutableArray array];
         NSMutableArray *humanitarianStudents = [NSMutableArray array];
     
@@ -100,6 +105,22 @@
      for (int i = 0; i < [humanitarianStudents count]; i++) {
      NSLog(@"Student #%d", i+1);
      }
+   */
+    
+#pragma mark - Level "Master"
+    
+    for (EGBStudent *student in allStudents) {
+        
+        if (student.subjectType & EGBStudentSubjectTypeBiology) {
+            
+            NSLog(@"Biology canceled!");
+            student.subjectType = student.subjectType ^ EGBStudentSubjectTypeBiology;
+            NSLog(@"%@", student);
+        }
+    }
+    
+    
+    
     
     return YES;
 }
