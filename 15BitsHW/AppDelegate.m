@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+  
+#pragma mark - Level "Learner"
     
     NSMutableArray *allStudents = [NSMutableArray array];
     
@@ -108,7 +110,7 @@
    */
     
 #pragma mark - Level "Master"
-    
+/*
     for (EGBStudent *student in allStudents) {
         
         if (student.subjectType & EGBStudentSubjectTypeBiology) {
@@ -118,9 +120,28 @@
             NSLog(@"%@", student);
         }
     }
+ */
     
+#pragma mark - Level "SuperMan"
     
+    NSInteger ramdom = arc4random() % NSIntegerMax;
     
+    NSLog(@"%ld", (long)ramdom);
+    
+    // Convert value to a hexadecimal string
+    NSMutableString *string = [NSMutableString stringWithFormat:@""];
+    
+    for (NSInteger numberCopy = ramdom; numberCopy > 0; numberCopy >>= 1)
+    {
+        // Prepend "0" or "1", depending on the bit
+        [string insertString:((numberCopy & 1) ? @"1" : @"0") atIndex:0];
+    }
+    NSLog(@"%@", string);
+    
+    // Convert value to a hexadecimal string
+    NSString *str = [NSString stringWithFormat:@"%lx", (long)ramdom];
+    NSLog(@"0x%@", str);
+ 
     
     return YES;
 }
