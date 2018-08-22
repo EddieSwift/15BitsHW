@@ -13,6 +13,7 @@
 		2C432DF5212D6FC500E63AB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C432DF4212D6FC500E63AB9 /* Assets.xcassets */; };
 		2C432DF8212D6FC500E63AB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C432DF6212D6FC500E63AB9 /* LaunchScreen.storyboard */; };
 		2C432DFB212D6FC500E63AB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C432DFA212D6FC500E63AB9 /* main.m */; };
+		2C432E03212D6FDB00E63AB9 /* EGBStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C432E02212D6FDB00E63AB9 /* EGBStudent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		2C432DF7212D6FC500E63AB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C432DF9212D6FC500E63AB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C432DFA212D6FC500E63AB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C432E01212D6FDB00E63AB9 /* EGBStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGBStudent.h; sourceTree = "<group>"; };
+		2C432E02212D6FDB00E63AB9 /* EGBStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGBStudent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 		2C432DEA212D6FC400E63AB9 /* 15BitsHW */ = {
 			isa = PBXGroup;
 			children = (
+				2C432E01212D6FDB00E63AB9 /* EGBStudent.h */,
+				2C432E02212D6FDB00E63AB9 /* EGBStudent.m */,
 				2C432DEB212D6FC400E63AB9 /* AppDelegate.h */,
 				2C432DEC212D6FC400E63AB9 /* AppDelegate.m */,
 				2C432DEE212D6FC400E63AB9 /* ViewController.h */,
@@ -141,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C432E03212D6FDB00E63AB9 /* EGBStudent.m in Sources */,
 				2C432DF0212D6FC400E63AB9 /* ViewController.m in Sources */,
 				2C432DFB212D6FC500E63AB9 /* main.m in Sources */,
 				2C432DED212D6FC400E63AB9 /* AppDelegate.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "EGBStudent.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +15,92 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSMutableArray *allStudents = [NSMutableArray array];
+    
+    for (int i = 0; i < 10; i++) {
+        
+        EGBStudent *student = [[EGBStudent alloc] init];
+     
+        for (int j = 0; j < 7; j++) {
+            
+                switch (arc4random_uniform(7))
+                {
+                    case 0:
+                        student.subjectType = student.subjectType | EGBStudentSubjectTypeBiology;
+                        break;
+                    case 1:
+                        student.subjectType = student.subjectType | EGBStudentSubjectTypeMath;
+                        break;
+                    case 2:
+                        student.subjectType = student.subjectType | EGBStudentSubjectTypeDevelopment;
+                        break;
+                    case 3:
+                        student.subjectType = student.subjectType | EGBStudentSubjectTypeEngineering;
+                        break;
+                    case 4:
+                        student.subjectType = student.subjectType | EGBStudentSubjectTypeArt;
+                        break;
+                    case 5:
+                        student.subjectType = student.subjectType | EGBStudentSubjectTypePhycology;
+                        break;
+                    case 6:
+                        student.subjectType = student.subjectType | EGBStudentSubjectTypeAnatomy;
+                        break;
+                }
+        }
+        
+        [allStudents addObject:student];
+        
+        //NSLog(@"Student #%d", i+1);
+        //NSLog(@"%@", student);
+        //NSLog(@" ");
+        
+    }
+    
+    //NSLog(@"%@", allStudents);
+        
+#pragma mark - Level "Student"
+        
+        NSMutableArray *technicalStudents = [NSMutableArray array];
+        NSMutableArray *humanitarianStudents = [NSMutableArray array];
+    
+        NSInteger developers = 0;
+        
+        
+        for (EGBStudent *student in allStudents) {
+            
+            if (student.subjectType & EGBStudentSubjectTypeMath) {
+                [technicalStudents addObject:student];
+            } else {
+                [humanitarianStudents addObject:student];
+            }
+            
+            if (student.subjectType & EGBStudentSubjectTypeDevelopment) {
+                developers++;
+            }
+            
+        }
+    
+    NSLog(@"Amount of Developers: %ld", (long)developers);
+    NSLog(@" ");
+    
+    NSLog(@"Technical Students: %lu", (unsigned long)[technicalStudents count]);
+    
+    for (int i = 0; i < [technicalStudents count]; i++) {
+        NSLog(@"Student #%d", i+1);
+    }
+    
+    NSLog(@" ");
+    
+     NSLog(@"Humanitarian Students: %lu", (unsigned long)[humanitarianStudents count]);
+
+     for (int i = 0; i < [humanitarianStudents count]; i++) {
+     NSLog(@"Student #%d", i+1);
+     }
+    
     return YES;
 }
 
